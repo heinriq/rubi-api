@@ -24,8 +24,8 @@ module  Api
                 if user.save
                     render json: {
                         status: 'SUCCESS',
-                        message: 'user posted successefully'
-                        data: users
+                        message: 'user posted successefully',
+                        data: user
                     }, status: :ok
                 else
                     render json: { 
@@ -57,7 +57,7 @@ module  Api
             
             private 
             def user_params
-                params.permit(:name :phone)
+                params.permit(:name, :phone)
             end
         end
     end
